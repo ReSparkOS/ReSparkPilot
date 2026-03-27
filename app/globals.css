@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FAFAF8;
+  --surface: #FFFFFF;
+  --surface-alt: #F4F3F0;
+  --border: #E8E6E1;
+  --border-strong: #D4D1CA;
+  --text-primary: #1A1916;
+  --text-secondary: #6B6860;
+  --text-muted: #A09D97;
+  --accent: #E8714A;
+  --accent-light: #FDF0EB;
+  --accent-mid: #F4A589;
+  --spark: #7B6EAB;
+  --spark-light: #F0EEF8;
+  --success: #4CAF7D;
+  --success-light: #EBF7F1;
+  --warning: #F0A030;
+  --warning-light: #FEF5E7;
+  --energy-high: #E8714A;
+  --energy-mid: #F0A030;
+  --energy-low: #8B9FC4;
+  --surface-focus: #1E1B2E;
+}
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: var(--font-body), sans-serif;
+    color: var(--text-primary);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--accent-light);
+    color: var(--text-primary);
+  }
+
+  input, textarea, select, button {
+    font-family: inherit;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), serif;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
